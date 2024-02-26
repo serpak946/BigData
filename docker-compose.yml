@@ -1,0 +1,21 @@
+version: "3:9"
+services:
+  db:
+    build:
+      ./database/
+    ports:
+      - "5432:5432"
+#    volumes:
+#      - /data/db:/var/lib/postgresql/data
+    restart: always
+  app:
+    build:
+      ./app/
+  postgresql_01:
+    image: postgres:latest
+    container_name: postgresql_01
+    restart: always
+    volumes:
+      - /data/postgresql_1:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: secret

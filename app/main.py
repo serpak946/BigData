@@ -36,6 +36,7 @@ def get_last_row():
         for (r) in result_set:
             return r[0]
 
+
 def get_all_row():
     # Retrieve the last number inserted inside the 'numbers'
     query = """SELECT number From numbers"""

@@ -7,8 +7,8 @@ from sqlalchemy import text
 db_name = 'database'
 db_user = 'postgres'
 db_pass = 'secret'
-db_host = 'db'
-db_port = '5432'
+db_host = 'localhost'
+db_port = '5431'
 
 # Connecto to the database
 db_string = 'postgresql://{}:{}@{}:{}/{}'.format(db_user, db_pass, db_host, db_port, db_name)
@@ -59,6 +59,7 @@ if __name__ == '__main__':
 
     while True:
         time.sleep(10)
-        add_new_row(random.randint(1, 100000))
-        print('The last value insterted is: {}'.format(get_last_row()))
+        print(get_all_row())
+        # add_new_row(random.randint(1, 100000))
+        # print('The last value insterted is: {}'.format(get_last_row()))
         # time.sleep(5)

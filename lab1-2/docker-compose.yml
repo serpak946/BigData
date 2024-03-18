@@ -19,3 +19,5 @@ services:
       - /data/postgresql_1:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: secret
+    ports:
+      - "5431:5432"

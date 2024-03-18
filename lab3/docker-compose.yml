@@ -1,0 +1,15 @@
+version: "3:9"
+services:
+  app:
+    build:
+      ./app/
+    depends_on:
+      - db
+    restart: on-failure
+  db:
+    build:
+      ./database/
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database/db:/var/lib/postgresql/data

@@ -5,7 +5,6 @@ services:
       ./app/
     depends_on:
       - db
-    restart: on-failure
   db:
     build:
       ./database/

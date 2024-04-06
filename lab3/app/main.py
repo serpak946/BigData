@@ -19,7 +19,7 @@ db = create_engine(db_string)
 def add_new_row(n):
     # Insert a new number into the 'numbers' table.
     with db.engine.connect() as conn:
-        conn.execute(text(f"""INSERT INTO numbers (number, clock) VALUES ({str(n)}, TIMESTAMP '{datetime.datetime.now(tz=datetime.timezone(datetime.timedelta(hours=2)))}');"""))
+        conn.execute(text(f"""INSERT INTO numbers (number, clock) VALUES ({str(n)}, TIMESTAMP '{datetime.datetime.now(tz=datetime.timezone(datetime.timedelta(hours=3)))}');"""))
         conn.commit()
 
 
@@ -54,9 +54,9 @@ if __name__ == '__main__':
     print('Application started')
 
     while True:
-        # add_new_row(random.randint(1, 100000))
-        # print('The last value insterted is: {}'.format(get_last_row()))
-        for i in get_all_row():
-            print(i)
+        add_new_row(random.randint(1, 100000))
+        print('The last value insterted is: {}'.format(get_last_row()))
+        # for i in get_all_row():
+        #     print(i)
         time.sleep(5)
-        print('---------------------------------------------------------')
+        # print('---------------------------------------------------------')

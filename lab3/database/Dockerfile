@@ -1,4 +1,4 @@
-FROM postgres:16.2
+FROM postgres:latest
 ENV POSTGRES_PASSWORD=secret
 ENV POSTGRES_USER=postgres
 ENV POSTGRES_DB=database
